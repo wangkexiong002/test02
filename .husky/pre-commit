@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run all
+
+COUNTER=$(git diff --name-only dist src __tests__ | wc -l)
+echo
+echo Checking unstage files...
+if [[ ${COUNTER} -ne 0 ]]; then
+  git status dist src __test__ -s
+  exit ${COUNTER}
+fi
+
