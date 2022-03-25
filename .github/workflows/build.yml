@@ -2,6 +2,10 @@ name: build
 
 on:
   push:
+    branches:
+    - '**'
+    tags-ignore:
+    - '*.*'
     paths-ignore:
     - '**.md'
     - '**/[rR][eE][aA][dD][mM][eE]'
@@ -27,3 +31,4 @@ jobs:
         milliseconds: 3000
     - name: Check output
       run: echo "${{ steps.program.outputs.time }}"
+
