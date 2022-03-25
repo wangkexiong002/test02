@@ -5,7 +5,7 @@ on:
     branches:
     - '**'
     tags-ignore:
-    - '*.*'
+    - '**'
     paths-ignore:
     - '**.md'
     - '**/[rR][eE][aA][dD][mM][eE]'
